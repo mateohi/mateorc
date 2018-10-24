@@ -35,6 +35,30 @@ PS1='\u:\[\e[02;36m\]\w\[\e[0;31m\]$(__git_ps1 " (%s)")\[\e[0;37m\]\$ ' # change
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
+populate_git_alias() {
+    git config --global "alias.$1" "$2"
+}
+
+populate_git_aliases() {
+    populate_git_alias a add
+    populate_git_alias amend "commit -a --amend --no-edit"
+    populate_git_alias b branch
+    populate_git_alias c commit
+    populate_git_alias ch checkout
+    populate_git_alias d diff
+    populate_git_alias gl "log --graph --decorate --oneline"
+    populate_git_alias lo "log --oneline"
+    populate_git_alias lp "log -p"
+    populate_git_alias pl pull
+    populate_git_alias pr "pull --rebase"
+    populate_git_alias ph push
+    populate_git_alias s "status --short --branch"
+    populate_git_alias sh show
+    populate_git_alias g "grep --line-number"
+    populate_git_alias gi "grep --line-number --ignore-case"
+    populate_git_alias cdf "clean -df"
+}
+
 # Aptitude
 get() {  # by default install latest search
     if [ $# -gt 0 ]; then
