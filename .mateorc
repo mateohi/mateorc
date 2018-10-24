@@ -46,6 +46,7 @@ populate_git_aliases() {
     populate_git_alias c commit
     populate_git_alias ch checkout
     populate_git_alias d diff
+    populate_git_alias dc "diff --cached"
     populate_git_alias gl "log --graph --decorate --oneline"
     populate_git_alias lo "log --oneline"
     populate_git_alias lp "log -p"
