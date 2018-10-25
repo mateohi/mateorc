@@ -31,7 +31,9 @@ alias g='git'
 source /usr/lib/git-core/git-sh-prompt
 source /usr/share/bash-completion/completions/git
 complete -o default -o nospace -F _git g
-PS1='\u:\[\e[02;36m\]\w\[\e[0;31m\]$(__git_ps1 " (%s)")\[\e[0;37m\]\$ ' # change default prompt
+PS1_A='\u:\[$(tput sgr0)\]\[\033[38;5;39m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[\033[38;5;196m\]$(__git_ps1 " (%s)")\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]'
+PS1_B='\[\033[38;5;243m\]\$?\[$(tput sgr0)\]\[\033[38;5;15m\] \u:\[$(tput sgr0)\]\[\033[38;5;39m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\[$(tput sgr0)\]\[\033[38;5;196m\]$(__git_ps1 " (%s)")\[$(tput sgr0)\]\[\033[38;5;15m\] \\$ \[$(tput sgr0)\]'
+PS1=$PS1_A
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
