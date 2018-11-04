@@ -37,32 +37,30 @@ PS1=$PS1_A
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
-populate_git_alias() {
-    git config --global "alias.$1" "$2"
+git_aliases() {
+    git config --global alias.a add
+    git config --global alias.amend "commit -a --amend --signoff --no-edit"
+    git config --global alias.b branch
+    git config --global alias.c "commit --signoff"
+    git config --global alias.ch checkout
+    git config --global alias.cp cherry-pick
+    git config --global alias.d diff
+    git config --global alias.dc "diff --cached"
+    git config --global alias.f fetch
+    git config --global alias.fa "fetch --all"
+    git config --global alias.gl "log --graph --decorate --oneline"
+    git config --global alias.lo "log --oneline"
+    git config --global alias.lp "log -p"
+    git config --global alias.lom "log --oneline HEAD ^master"
+    git config --global alias.pl pull
+    git config --global alias.pr "pull --rebase"
+    git config --global alias.ph push
+    git config --global alias.s "status --short --branch"
+    git config --global alias.sh show
+    git config --global alias.g "grep --line-number"
+    git config --global alias.gi "grep --line-number --ignore-case"
+    git config --global alias.cdf "clean -df"
 }
-
-populate_git_alias a add
-populate_git_alias amend "commit -a --amend --signoff --no-edit"
-populate_git_alias b branch
-populate_git_alias c "commit --signoff"
-populate_git_alias ch checkout
-populate_git_alias cp cherry-pick
-populate_git_alias d diff
-populate_git_alias dc "diff --cached"
-populate_git_alias f fetch
-populate_git_alias fa "fetch --all"
-populate_git_alias gl "log --graph --decorate --oneline"
-populate_git_alias lo "log --oneline"
-populate_git_alias lp "log -p"
-populate_git_alias lom "log --oneline HEAD ^master"
-populate_git_alias pl pull
-populate_git_alias pr "pull --rebase"
-populate_git_alias ph push
-populate_git_alias s "status --short --branch"
-populate_git_alias sh show
-populate_git_alias g "grep --line-number"
-populate_git_alias gi "grep --line-number --ignore-case"
-populate_git_alias cdf "clean -df"
 
 # Aptitude
 get() {  # by default install latest search
