@@ -14,6 +14,7 @@ NC='\033[0m'
 
 # Genericos
 shopt -s globstar
+alias v='vim'
 
 # Editor exports
 export EDITOR=vim
@@ -25,6 +26,10 @@ alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
 alias tmux='tmux -2'
 alias ip='ip -c'
+
+# Kotlin
+alias ko='kotlinc-jvm'
+alias ks='kotlinc-js'
 
 # Git
 alias g='git'
@@ -38,6 +43,9 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
 git_aliases() {
+    echo -e "${CYAN} installing git aliases ...${NC}"
+    echo -e $LIGHT_PURPLE
+    set -x
     git config --global alias.a add
     git config --global alias.amend "commit -a --amend --signoff --no-edit"
     git config --global alias.b branch
@@ -60,6 +68,8 @@ git_aliases() {
     git config --global alias.g "grep --line-number"
     git config --global alias.gi "grep --line-number --ignore-case"
     git config --global alias.cdf "clean -df"
+    { set +x; } 2>/dev/null
+    echo -e ${NC}
 }
 
 # Aptitude
