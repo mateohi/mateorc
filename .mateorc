@@ -55,7 +55,7 @@ git_aliases() {
     git config --global alias.d diff
     git config --global alias.dc "diff --cached"
     git config --global alias.f fetch
-    git config --global alias.fa "fetch --all"
+    git config --global alias.fa "fetch --all --prune"
     git config --global alias.gl "log --graph --decorate --oneline"
     git config --global alias.lo "log --oneline"
     git config --global alias.lp "log -p"
