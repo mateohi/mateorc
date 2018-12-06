@@ -57,7 +57,8 @@ git_aliases() {
     git config --global alias.f fetch
     git config --global alias.fa "fetch --all --prune"
     git config --global alias.gl "log --graph --decorate --oneline"
-    git config --global alias.lo "log --oneline"
+    git config --global alias.l "log --oneline"
+    git config --global alias.lo 'log --pretty=format:"%C(yellow)%h %C(magenta)%<(15,trunc)%an %C(blue)%<(12,trunc)%ar %C(auto)%s%d"'
     git config --global alias.lp "log -p"
     git config --global alias.lom "log --oneline HEAD ^master"
     git config --global alias.pl pull
